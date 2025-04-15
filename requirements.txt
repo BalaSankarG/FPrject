@@ -7,3 +7,4 @@ unstructured
 pinecone-client
 pypdf
 sentence_transformers
+OPENROUTER_APIKEY=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
