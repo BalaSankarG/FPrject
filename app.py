@@ -16,7 +16,6 @@ def main():
     job_description = st.text_area("'JOB DESCRIPTION'", key="1")
     document_count = st.text_input("No. of 'RESUMES' to return", key="2")
 
-
     pdf = st.file_uploader("Upload resumes here, only PDF files allowed", type=["pdf"], accept_multiple_files=True)
 
     submit = st.button("Analysis")
@@ -40,11 +39,10 @@ def main():
                 st.write(f"**File:** {doc.metadata['name']}")
                 st.info(f"**Match Score:** {round(score * 100, 2)}%")  
 
-                ##with st.expander('Show More 👀'):
-                    ##summary = get_summary(doc, job_description, score)
-                    ##st.write(f"**Summary:** {summary}")
+                with st.expander('Show More 👀'):
+                    summary = get_summary(doc, job_description, score, current_doc=None)
+                    st.write(f"**Summary:** {summary}")
 
-
-
+# Run the app
 if __name__ == '__main__':
     main()
